@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Midpath hiring filter">
+        <meta name="keywords" content="Midpath, hiring">
+        <meta name="author" content="Midpath Software Pvt Ltd">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Midpath hiring</title> 
+        <link href='https://arjoonncom.herokuapp.com/wakeup' rel='js' async>
+        <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+    </head>
+    <body>
+      <h1><a href='https://web.midpathsoftware.com/'>MidPath</a> hiring</h1>
+      <p>
+      You are given a string variable called 'original'. You need to write a
+      javascript program that uses this variable and sets the value for another
+      variable called 'computed' according to the given rules. 
+      </p>
+      <p>If the character is a digit, leave it unchanged. If the position of
+      the character is a multiple of 3 then rotate the character by 5. If the
+      position of the character is a multiple of 5, rotate it by 9. However, if
+      the character's position is a multiple of both 3 and 5, rotate it by 3.
+      If none of these conditions are satisfied, rotate the character by 2.
+      </p>
+      <p>
+      In order to rotate a character, say 'k' by an amount of 4 we need to find
+      the character 4 places before 'k' in alphabetical order which turns out
+      to be 'g'. Consider only lowercase a-z characters and assume that they
+      are cyclic in nature.
+      </p>
+      <p>
+      When you have written your program, click on 'Run program' button and the
+      link below will update. If your program is correct, clicking on it will
+      take you to the next step in the hiring process.
+      </p>
+      <p>If the program is wrong, you will be taken to a 404 page on github.</p>
+      <a href='https://gist.github.com/thesage21/empty' id='link'>gist.github.com: </a>
+      <pre id='err'></pre>
+      <button onclick='runProgram()'>Run program</button>
+      <textarea id='program' rows=30>computed = original</textarea>
+      <script>
+        const original = 'e4875o49fhmdk9fg042e530g3kd8h9g7'
+        let computed = ''
+        function runProgram(){
+          document.getElementById('err').innerHTML = ''
+          let prg = document.getElementById('program').value
+          if(prg.indexOf('computed') == -1){
+            document.getElementById('err').innerHTML = 'Variable `computed` was never set'
+            return
+          }
+          try{ eval(prg) } catch(err){
+            document.getElementById('err').innerHTML = err.message
+          }
+          document.getElementById('link').href = 'https://gist.github.com/theSage21/'+computed
+          document.getElementById('link').innerHTML = 'gist.github.com: '+computed
+        }
+      </script>
+    </body>
+<html>
